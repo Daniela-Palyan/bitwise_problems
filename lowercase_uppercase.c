@@ -4,11 +4,8 @@
 char * switch_cases(char * str){
     char * ptr = str;
     while (*ptr){
-        if(*ptr >= 'A' && *ptr <= 'Z'){
-            *ptr += ('a' - 'A');
-        }
-        else if(*ptr >= 'a' && *ptr <= 'z'){
-            *ptr -= ('a' - 'A');
+        if ((*ptr >= 'A' && *ptr <= 'Z') || (*ptr >= 'a' && *ptr <= 'z')){
+            *ptr ^= 32;
         }
         ptr++;
     }
